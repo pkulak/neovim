@@ -152,6 +152,7 @@
             undotree
             indent-blankline-nvim
             vim-startuptime
+            better-escape-nvim
           ];
         };
       };

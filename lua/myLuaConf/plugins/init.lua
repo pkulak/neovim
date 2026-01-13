@@ -107,6 +107,24 @@ require('lze').load {
     end,
   },
   {
+    "better-escape.nvim",
+    for_cat = 'general.extra',
+    event = "InsertEnter",
+    after = function(plugin)
+      require('better_escape').setup {
+        default_mappings = false,
+        mappings = {
+          i = {
+            j = {
+              k = "<Esc>",
+              x = "<Esc>:x<CR>",
+            },
+          },
+        }
+      }
+    end,
+  },
+  {
     "indent-blankline.nvim",
     for_cat = 'general.extra',
     event = "DeferredUIEnter",
