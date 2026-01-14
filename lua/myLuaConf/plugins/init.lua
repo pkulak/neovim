@@ -64,6 +64,7 @@ if nixCats('general.extra') then
 end
 
 require('guess-indent').setup({})
+require('auto-session').setup({})
 
 require('lze').load {
   { import = "myLuaConf.plugins.telescope", },

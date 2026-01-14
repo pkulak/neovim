@@ -137,6 +137,9 @@ vim.keymap.set("x", "<leader>P", '"_dP', { noremap = true, silent = true, desc =
 vim.opt.colorcolumn = "80,120"
 vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#1e1e2e' })
 
+-- Sessions
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 -- Format the buffer in fun ways
 vim.keymap.set('n', '=j', ':%!jq<CR>:set syntax=json<CR>', { 
   silent = true, 

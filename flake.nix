@@ -67,6 +67,7 @@
             vim-repeat
             plenary-nvim
             guess-indent-nvim
+            auto-session
             (nvim-notify.overrideAttrs { doCheck = false; }) # TODO: remove overrideAttrs after check is fixed
           ];
           extra = [
