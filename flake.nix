@@ -40,7 +40,6 @@
           universal-ctags
           ripgrep
           fd
-          tree-sitter
           jq
           libxml2
         ];
