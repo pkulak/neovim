@@ -29,12 +29,14 @@ require('lze').load {
     -- and it will run for all specs with type(plugin.lsp) == table
     -- when their filetype trigger loads them
     lsp = function(plugin)
-      local config = vim.tbl_deep_extend('force', 
-        { on_attach = require('myLuaConf.LSPs.on_attach') },
-        plugin.lsp or {}
-      )
-      vim.lsp.config(plugin.name, config)
+      vim.lsp.config(plugin.name, plugin.lsp or {})
       vim.lsp.enable(plugin.name)
+    end,
+    before = function(plugin)
+      vim.lsp.config("*", {
+        -- capabilities = capabilities,
+        on_attach = require("myLuaConf.LSPs.on_attach"),
+      })
     end,
   },
   {
@@ -98,6 +100,8 @@ require('lze').load {
     ft = "rust",
     lsp = {
       filetypes = { "rust" },
+      -- for some reason, this property doesn't get set automatically
+      on_attach = require("myLuaConf.LSPs.on_attach"),
       settings = {
         ["rust-analyzer"] = {
           cargo = {
