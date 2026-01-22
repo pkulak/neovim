@@ -99,6 +99,25 @@ require('lze').load {
     ft = "rust",
     lsp = {
       filetypes = { "rust" },
+      on_attach = require('myLuaConf.LSPs.on_attach'), -- I don't know why I have to do this. :(
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = {
+            allFeatures = true,
+            loadOutDirsFromCheck = true,
+            buildScripts = {
+              enable = true,
+            },
+          },
+          procMacro = {
+            enable = true,
+          },
+          checkOnSave = {
+            enable = true,
+            command = "clippy",
+          },
+        },
+      },
     },
   },
   {
