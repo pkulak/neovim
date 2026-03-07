@@ -127,7 +127,7 @@ require('lze').load {
     for_cat = "markdown",
     ft = "markdown",
     lsp = {
-      filetypes = { "markdown", "text" },
+      filetypes = { "markdown", "text", "jjdescription" },
       settings = {
       ltex = {
         language = "en-US",
