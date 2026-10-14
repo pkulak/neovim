@@ -168,6 +168,9 @@ vim.o.expandtab = true
 -- stops line wrapping from being confusing
 vim.o.breakindent = true
 
+-- Wrap at word boundaries instead of mid-word
+vim.o.linebreak = true
+
 -- Save undo history
 vim.o.undofile = true
 
